@@ -33,13 +33,13 @@ with open('prompts_contract_para.json','w',encoding='utf-8') as res:
             while duanluo[i].isdigit():
                 i+=1
             if duanluo[i] not in ['：',':']:
-                print (duanluo)
+                #print (duanluo)
                 continue
             input = duanluo[i+1:].strip()     
-            print (input)
+            #print (input)
             if len(input)<30:
                 continue 
-            print ('*'*100)
+            #print ('*'*100)
             prompt = encode_prompt(instructions_para, [input])
             prompts.append(prompt)
     
