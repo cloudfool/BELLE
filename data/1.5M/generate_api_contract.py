@@ -7,6 +7,7 @@ def main():
     parser = argparse.ArgumentParser(description='chatgpt api')
     parser.add_argument('--input', type=str)
     parser.add_argument('--output', type=str)
+    parser.add_argument('--num', type=str)
     args = parser.parse_args()
     args = vars(args)
     args = {k: v for k, v in args.items() if v is not None}
@@ -57,8 +58,8 @@ def main():
             #print (raw_instructions)
             prompt_['output'] = raw_instructions
             Results.append(prompt_)
-            
-            break
+            if len(Results)<args['num']:
+                break
     with open(args['output'],'w',encoding='utf-8') as res:
         json.dump(Results,res,indent=2,ensure_ascii=False)
     res.close()
