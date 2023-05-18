@@ -7,7 +7,7 @@ def main():
     parser = argparse.ArgumentParser(description='chatgpt api')
     parser.add_argument('--input', type=str)
     parser.add_argument('--output', type=str)
-    parser.add_argument('--num', type=str)
+    parser.add_argument('--num', type=int)
     args = parser.parse_args()
     args = vars(args)
     args = {k: v for k, v in args.items() if v is not None}
