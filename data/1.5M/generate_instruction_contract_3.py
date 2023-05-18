@@ -41,7 +41,7 @@ with open('results_contract_train.json','w',encoding='utf-8') as res:
                 question = output[this_question_id]
                 answer = '\n'.join(output[this_question_id+1:next_question_id])
                 if len(answer) == 0:
-                    print (question)
+                    #print (question)
                     continue
 
                 result = decode_result(input,question,answer)
@@ -54,8 +54,8 @@ with open('results_contract_train.json','w',encoding='utf-8') as res:
             if len(answer) > 0:
                 result = decode_result(input,question,answer)
                 results.append(result)
-            else:
-                print (question)
+            #else:
+                #print (question)
 
     print (len(results))
     json.dump(results,res,indent=2,ensure_ascii=False)
