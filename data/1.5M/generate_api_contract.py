@@ -58,7 +58,7 @@ def main():
             #print (raw_instructions)
             prompt_['output'] = raw_instructions
             Results.append(prompt_)
-            if len(Results)<args['num']:
+            if len(Results)>args['num']:
                 break
     with open(args['output'],'w',encoding='utf-8') as res:
         json.dump(Results,res,indent=2,ensure_ascii=False)
